@@ -1,0 +1,27 @@
+body {
+    background: url(login.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .card {
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .form-control, .form-select {
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: rgb(241, 158, 25);
+    border-color: rgb(241, 158, 25);
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(122, 66, 0);
+    border-color: rgb(122, 66, 0);
+  }
