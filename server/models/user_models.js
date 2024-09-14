@@ -3,7 +3,7 @@ const database= require ('../config/database');
 
 // estructura de usuarios
 const usuarios= database.define ('usuarios', {
-    credencial: {
+    credencial_hasheada: {
         type: Sequelize.STRING,
         primaryKey: true, 
         allowNull: false
@@ -15,10 +15,6 @@ const usuarios= database.define ('usuarios', {
     sede: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-    antiguedad:{
-        type:Sequelize.STRING,
-        allowNull:false
     }
 },{
     timestamps:false,
