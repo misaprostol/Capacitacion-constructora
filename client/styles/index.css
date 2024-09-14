@@ -81,3 +81,18 @@ body {
 body {
     padding-top: 60px;
 }
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0;
+    font-weight: bold;
+}
+
+.card-body p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
