@@ -19,8 +19,8 @@ const obtenerTodos = async (req, res) => {
 const obtener = async (req, res) => {
   try {
     const { credencial } = req.params
-    console.log(credencial)
-    const user = await Usuarios.findByPk(credencial)
+    const credencial_hash=await bcrypt.hash(credencial,10);
+    const user = await Usuarios.findByPk(credencial_hash)
   
     return res.status(200).json(user) 
   } catch (error) {
@@ -30,13 +30,14 @@ const obtener = async (req, res) => {
 
 const crear = async (req, res) => {
   try {
-    const { credencial,nombre,sede} = req.body;
+    const { credencial,nombre,apellido,sede} = req.body;
     // encriptar(credencial)
     const credencial_hasheada=await bcrypt.hash(credencial,10);
     console.log(credencial_hasheada);
     const usuarioNuevo = await Usuarios.create({ 
         credencial_hasheada,
         nombre,
+        apellido,
         sede
     });
     usuarioNuevo.save();
