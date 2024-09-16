@@ -10,7 +10,7 @@
 <body>
   <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px;">
-      <h4 class="mb-4">Bienvenido al Curso de Capacitacion De Constructora S.D.L.G</h4>
+      <h4 class="mb-4">Bienvenido al Curso de Capacitación De Constructora S.D.L.G</h4>
       <p>Supervisor de Seguridad - 2024</p>
       <form>
         <div class="mb-3">
@@ -35,11 +35,24 @@
             <option value="Villa España">Villa España</option>
           </select>
         </div>
+
+        <!-- Sección del CAPTCHA -->
+        <div class="mb-3">
+          <label for="captcha" class="form-label">Captcha</label>
+          <div id="captchaText" class="captcha mb-2"></div>
+          <input type="text" class="form-control" id="captchaInput" placeholder="Ingrese el texto del captcha" required>
+        </div>
+
+        <!-- Mensaje de error si el captcha es incorrecto -->
+        <div id="captchaError" class="text-danger mb-3" style="display:none;">Captcha incorrecto, intente nuevamente.</div>
+
+        <!-- Botón de envío dentro del formulario -->
         <button type="submit" class="btn btn-primary w-100">Enviar</button>
       </form>
     </div>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/captcha.js"></script>
 </body>
 </html>
