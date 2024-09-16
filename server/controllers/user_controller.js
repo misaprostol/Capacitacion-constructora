@@ -1,11 +1,7 @@
 const express= require ('express');
 const router= express.Router();
-const bcrypt= require ('bcrypt');
 const Usuarios = require("../models/user_models");
 // Controlador de productos
-const encriptar=async(password)=>{
-  
-}
 const obtenerTodos = async (req, res) => {
   // Obtiene todos los usuarios de la base de datos
   try {
@@ -19,8 +15,7 @@ const obtenerTodos = async (req, res) => {
 const obtener = async (req, res) => {
   try {
     const { credencial } = req.params
-    const credencial_hash=await bcrypt.hash(credencial,10);
-    const user = await Usuarios.findByPk(credencial_hash)
+    const user = await Usuarios.findByPk(credencial)
   
     return res.status(200).json(user) 
   } catch (error) {
@@ -31,11 +26,8 @@ const obtener = async (req, res) => {
 const crear = async (req, res) => {
   try {
     const { credencial,nombre,apellido,sede} = req.body;
-    // encriptar(credencial)
-    const credencial_hasheada=await bcrypt.hash(credencial,10);
-    console.log(credencial_hasheada);
     const usuarioNuevo = await Usuarios.create({ 
-        credencial_hasheada,
+        credencial,
         nombre,
         apellido,
         sede
