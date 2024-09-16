@@ -1,7 +1,34 @@
+// Función para generar el captcha
+function generateCaptcha() {
+    var charsArray = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var captchaLength = 6;
+    var captcha = [];
+    for (var i = 0; i < captchaLength; i++) {
+        var index = Math.floor(Math.random() * charsArray.length);
+        captcha.push(charsArray[index]);
+    }
+    var captchaString = captcha.join("");
+    document.getElementById('captchaImage').innerText = captchaString;
+    return captchaString;
+}
+
+// aca iniciamos el captcha 
+var generatedCaptcha = generateCaptcha();
+
+// Validar CAPTCHA y formulario
 document.getElementById('trainingForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Respuestas correctas
+    // Validar el CAPTCHA
+    var userCaptchaInput = document.getElementById('captchaInput').value.trim();
+    if (userCaptchaInput.toLowerCase() !== generatedCaptcha.toLowerCase()) {
+        alert('El CAPTCHA es incorrecto. Por favor, intenta nuevamente.');
+        generatedCaptcha = generateCaptcha();  // Recargar un nuevo CAPTCHA
+        document.getElementById('captchaInput').value = '';  // Limpiar campo de entrada
+        return; // Salir de la función para evitar que se muestre el resultado
+    }
+
+    // Si el CAPTCHA es correcto, proceder a evaluar las respuestas
     const correctAnswers = {
         question1: 'correct',
         question2: 'correct',
@@ -42,10 +69,10 @@ document.getElementById('trainingForm').addEventListener('submit', function(even
     if (percentage >= 70) {
         resultDiv.classList.add('success');
         resultDiv.classList.remove('fail');
-        resultDiv.innerHTML += '<br>¡Aprobaste la capacitación has obtenido tu certificado de capacitacion!';
+        resultDiv.innerHTML += '<br>¡Aprobaste la capacitación, has obtenido tu certificado de capacitación!';
     } else {
         resultDiv.classList.add('fail');
         resultDiv.classList.remove('success');
-        resultDiv.innerHTML += '<br>No aprobaste, no has obtenido tu certificado de capacitacion';
+        resultDiv.innerHTML += '<br>No aprobaste, no has obtenido tu certificado de capacitación.';
     }
 });

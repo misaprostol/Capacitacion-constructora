@@ -159,12 +159,25 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn-submit">Finalizar y Evaluar</button>
-        </form>
+        <!-- captcha -->
+<center> 
+        <div class="form-group captcha-container">
+            <label for="captcha">Por favor, completar el sistema captcha para proceder: </label>
+            <div class="captcha">
+                <span id="captchaImage" class="captcha-image"></span>
+                <span class="captcha-refresh" onclick="generateCaptcha()">🔄 Recargar</span>
+            </div>
+            <input type="text" id="captchaInput" class="form-control" placeholder="Escribe el texto del CAPTCHA" required>
+        </div>
 
-        <div id="result" class="result"></div>
-    </div>
+        <button type="submit" class="btn-submit">Finalizar y Evaluar</button>
+    </form>
 
+    <div id="result" class="result"></div>
+    <a href="index.html" class="retroceder">Volver</a>
+</div>
+</center>
     <script src="scripts/capacitacion.js"></script>
+
 </body>
 </html>
