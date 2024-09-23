@@ -76,3 +76,24 @@ document.getElementById('trainingForm').addEventListener('submit', function(even
         resultDiv.innerHTML += '<br>No aprobaste, no has obtenido tu certificado de capacitación.';
     }
 });
+
+const increaseFontBtn = document.getElementById('increaseFont');
+const decreaseFontBtn = document.getElementById('decreaseFont');
+const form = document.getElementById('trainingForm');
+
+// Tamaño de fuente inicial
+let fontSize = 16; // tamaño en píxeles
+
+// Función para aumentar el tamaño de la fuente
+increaseFontBtn.addEventListener('click', () => {
+    fontSize += 2; // Incrementar el tamaño de la fuente
+    form.style.fontSize = fontSize + 'px'; // Aplicar el nuevo tamaño
+});
+
+// Función para disminuir el tamaño de la fuente
+decreaseFontBtn.addEventListener('click', () => {
+    if (fontSize > 10) { // Prevenir que la fuente sea demasiado pequeña
+        fontSize -= 2;
+        form.style.fontSize = fontSize + 'px';
+    }
+});

@@ -1,3 +1,31 @@
+/* Botones estilo naranja */
+.btn-orange {
+    background-color: #FFA500; /* Color naranja */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover y focus para los botones */
+.btn-orange:hover {
+    background-color: #e69500;
+}
+
+.btn-orange:active {
+    background-color: #cc8400;
+}
+
+/* Estilo de los controles de tamaño de fuente */
+.font-size-controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +33,13 @@
 }
 
 body {
+    font-size: 16px; 
     font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #333;
     padding: 20px;
+    background: url(login.jpg) fixed no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
 }
 
 .container {
@@ -110,7 +141,7 @@ select {
 .retroceder {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff2508;
+    background-color: rgb(241, 158, 25);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -121,11 +152,11 @@ select {
 }
 
 .retroceder:hover {
-    background-color: #9b0606; 
+    background-color:rgb(122, 66, 0); 
     transform: translateY(-2px); 
 }
 
 .retroceder:active {
-    background-color: #3a0202; 
+    background-color: rgb(122, 66, 0) ;
     transform: translateY(0);
 }

@@ -9,8 +9,12 @@
 <body>
     <div class="container">
         <h3>Formulario de Capacitación - Supervisor de Seguridad</h3>
+        <!-- Botones para aumentar y disminuir el tamaño de la fuente -->
+        <div class="font-size-controls">
+            <button id="increaseFont" class="btn-orange">Aumentar tamaño de fuente</button>
+            <button id="decreaseFont" class="btn-orange">Disminuir tamaño de fuente</button>
+        </div>
         <form id="trainingForm">
-            <!-- Preguntas 1 a 4 -->
             <div class="form-group">
                 <label for="question1">1. ¿Cuál es la importancia de usar equipos de protección personal (EPP)?</label>
                 <select id="question1" class="form-control" required>
@@ -48,7 +52,6 @@
                 </select>
             </div>
 
-            <!-- Añadir más preguntas hasta 15 -->
             <div class="form-group">
                 <label for="question5">5. ¿Cuál es la acción más importante al identificar un peligro en el sitio de construcción?</label>
                 <select id="question5" class="form-control" required>
@@ -175,6 +178,7 @@
 
     <div id="result" class="result"></div>
     <a href="index.html" class="retroceder">Volver</a>
+    
 </div>
 </center>
     <script src="scripts/capacitacion.js"></script>
